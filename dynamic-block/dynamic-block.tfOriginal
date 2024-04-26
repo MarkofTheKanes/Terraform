@@ -1,0 +1,34 @@
+provider "aws" {
+  region = "us-east-2"
+}
+
+resource "aws_security_group" "demo" {
+  name = "my-security-group"
+
+  ingress {
+    from_port   = 8201
+    to_port     = 8201
+    protocol    = "tcp"
+    cidr_blocks = ["192.67.2.1/32"]
+  }
+
+  ingress {
+    from_port   = 8202
+    to_port     = 8202
+    protocol    = "tcp"
+    cidr_blocks = ["192.67.2.1/32"]
+  }
+
+  ingress {
+    from_port   = 8300
+    to_port     = 8300
+    protocol    = "tcp"
+    cidr_blocks = ["192.67.2.1/32"]
+  }
+ingress {
+    from_port   = 9201
+    to_port     = 9201
+    protocol    = "tcp"
+    cidr_blocks = ["192.67.2.1/32"]
+  }
+}
